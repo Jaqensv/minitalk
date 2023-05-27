@@ -11,15 +11,9 @@ void    converter(int pid, char c)
     while (++i < 8)
     {
         if ((c & 0x01 << i) != 0)
-        {
             kill(pid, SIGUSR1);
-            printf("sig1\n");
-        }
         else
-        {
             kill(pid, SIGUSR2);
-            printf("sig2\n");
-        }
         usleep(80);
     }
 }
@@ -35,4 +29,5 @@ int main(int argc, char **argv)
     pid = ft_atoi(argv[1]);
     while (argv[2][++i])
         converter(pid, argv[2][i]);
+    converter(pid, 127);
 }

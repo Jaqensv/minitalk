@@ -7,7 +7,10 @@ SRC_CLIENT	= client.c \
 
 SRC_SERVER	= server.c \
 		inc_printf/ft_printf.c \
-		inc_printf/toolbox.c
+		inc_printf/toolbox.c \
+		inc_libft/ft_strlen.c \
+		inc_mm/memory_manager_utils.c \
+		inc_mm/memory_manager.c  
 
 OBJ_SERVER	= $(SRC_SERVER:.c=.o)
 
